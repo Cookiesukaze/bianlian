@@ -1,10 +1,11 @@
 import Vue from 'vue'
+import 'bootstrap/dist/css/bootstrap.css'
+//设置的字体在appvue里，要在bootstrapcss的下面import才起作用
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import 'bootstrap/dist/css/bootstrap.css'
 
 import i18n from "@/i18n";
 

@@ -1,12 +1,21 @@
 <template>
   <div class="main-content">
-    <h1 class="main-title">AI Video Translation</h1>
-    <h2 class="subtitle">use our product to <span class="highlight">connect</span> your videos to the <span class="highlight">world</span></h2>
-    <button class="get-start-btn">Get start for free</button>
+    <div class="paddingt10"></div>
+    <h1 class="main-title">{{ $t('title') }}</h1>
+    <div class="paddingt10"></div>
+    <h2 class="subtitle">{{ $t('sub_title.1') }}<span class="highlight">{{ $t('sub_title.2') }}</span>{{ $t('sub_title.3') }}<span class="highlight">{{ $t('sub_title.4') }}</span></h2>
+    <button class="get-start-btn">{{ $t('get_start_for_free') }}</button>
   </div>
 </template>
 
+<script setup>
+import '../../global.css'
+</script>
+
 <style scoped>
+body{
+  font-family: opposans,微软雅黑,monospace;
+}
 .main-content {
   text-align: center;
   padding: 50px 20px;
@@ -28,19 +37,5 @@
   /* Add rainbow effect if desired */
 }
 
-.get-start-btn {
-  padding: 15px 30px;
-  font-size: 1.2em;
-  background-color: #FF4081; /* Use the color from OpenAI website */
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.get-start-btn:hover {
-  background-color: #D81B60; /* Darker shade for hover effect */
-}
 </style>
-<script setup>
-</script>
+

@@ -14,4 +14,13 @@ export default {
         name:'About',
     },
     login:'Login',
+    title:'AI Video Translation',
+    sub_title:{
+        1:'use our product to',
+        2:' connect ',
+        3:' your videos to the ',
+        4:'world',
+    },
+    get_start_for_free:"Get start for free",
+
 }

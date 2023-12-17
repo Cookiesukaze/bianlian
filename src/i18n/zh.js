@@ -1,6 +1,6 @@
 export default {
     language: {
-        name:'语言',
+        name:'Language',
         zh: '中文',
         en: 'English',
     },
@@ -14,4 +14,12 @@ export default {
         name:'关于',
     },
     login:'登录',
+    title:'AI 视频翻译',
+    sub_title:{
+        1:'使用我们的产品',
+        2:' 连接 ',
+        3:' 你和 ',
+        4:'世界',
+    },
+    get_start_for_free:"免费开始使用",
 }
