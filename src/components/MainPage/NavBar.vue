@@ -45,6 +45,7 @@
 
 <script>
 
+
 export default {
   methods: {
     changeLanguage(locale) {
@@ -59,7 +60,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f9f9f9; /* Use the color from OpenAI website */
+  //background-color: #f9f9f9; /* Use the color from OpenAI website */
   padding: 10px 20px;
 }
 
@@ -82,7 +83,7 @@ export default {
 }
 
 .dropbtn {
-  background-color: #f9f9f9; /* Use the color from OpenAI website */
+  background-color: rgba(249, 249, 249, 0);
   color: #333;
   padding: 10px 15px;
   border: none;
@@ -92,7 +93,7 @@ export default {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9; /* Use the color from OpenAI website */
+  //background-color: #f9f9f9; /* Use the color from OpenAI website */
   min-width: 160px;
   z-index: 1;
 }
@@ -105,7 +106,7 @@ export default {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  //background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {

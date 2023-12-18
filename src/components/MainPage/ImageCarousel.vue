@@ -1,5 +1,5 @@
 <template>
-  <div class="center paddingt5">
+  <div class="center paddingt5 ">
     <div class="scroll-container">
       <div class="left scroll-shadow-left" style="z-index: 1"></div>
       <div class="scroll-wrapper" :style="{animationDuration: duration + 's'}">
@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style scoped>
+.carousel {
+  background-color: #f9f9f9; /* Use the color from OpenAI website */
+}
 .scroll-container {
   width: 400px;
   height: 150px;
@@ -74,12 +77,12 @@ export default {
   position: absolute;
   width: 50px;
   height: 100px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgba(249, 251, 251, 1), rgba(255, 255, 255, 0));
 }
 .scroll-shadow-right{
    position: absolute;
    width: 50px;
    height: 100px;
-   background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+   background-image: linear-gradient(to left, rgba(249, 251, 251, 1), rgba(255, 255, 255, 0));
  }
 </style>

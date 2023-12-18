@@ -1,0 +1,12 @@
+.underline-magical {
+    background-image: linear-gradient(120deg, #fbdce8 0%, #cbe9fe 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+}
+
+.underline-magical:hover {
+    background-size: 100% 88%;
+    color: #3b2a56 !important;
+}

@@ -10,15 +10,14 @@
 .get-start-btn {
     padding: 15px 30px;
     font-size: 1.2em;
-    background-color: #FF4081; /* Use the color from OpenAI website */
-    color: #fff;
-    border: none;
+    background-color: #f3f5f7; /* Use the color from OpenAI website */
+    color: #3b3b3b;
     cursor: pointer;
     margin-top: 20px;
 }
 
 .get-start-btn:hover {
-    background-color: #D81B60; /* Darker shade for hover effect */
+    background-color: #eef0f1; /* Darker shade for hover effect */
 }
 
 .center{
@@ -37,4 +36,8 @@
     bottom: 0;
     left: 0;
     right: auto;
+}
+.text-shadow{
+    font-weight: bold;
+    text-shadow: 5px 1px 5px #fffdf7;
 }

@@ -1,0 +1,61 @@
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255)) rgb(231, 237, 238);
+}
+
+.ball-before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, white, transparent);
+    filter: blur(40px);
+    z-index: -20;
+}
+
+.ball-after {
+    content: "";
+    position: absolute;
+    z-index: -20;
+    height: 100px;
+    width: 160px;
+    transform: translateX(-30%);
+    background: conic-gradient(#bae6fd, #bfdbfe);
+    filter: blur(40px);
+}
+
+h2::before, h1::before {
+    @extend .ball-before;
+}
+
+h2::after, h1::after {
+    @extend .ball-after;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: radial-gradient(circle, transparent, #1e3a8a, rgba(0, 0, 0, 0.1));
+    }
+}
+
+/* Large screen styles */
+@media (min-width: 1024px) {
+    /* Assuming 'lg' breakpoint is 1024px */
+    div::before {
+        height: 30px;
+    }
+}
+
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    div::after {
+        background: conic-gradient(#1e40af 0%,#3b82f6 50%);
+        opacity: 0.4;
+    }
+}
