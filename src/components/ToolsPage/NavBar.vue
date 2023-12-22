@@ -24,8 +24,8 @@
         <!-- Tools -->
         <button class="dropbtn">{{ $t('tools.name') }}</button>
         <div class="dropdown-content">
-          <a href="#">{{ $t('tools.vt') }}</a>
-          <a href="#">{{ $t('tools.at') }}</a>
+          <a href="#/ToolsPage">{{ $t('tools.vt') }}</a>
+          <a href="#/ToolsPage">{{ $t('tools.at') }}</a>
         </div>
       </div>
       <div class="dropdown">
