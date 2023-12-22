@@ -22,6 +22,10 @@ export default {
             { text: '中文', value: 'zh' },
             { text: '英语', value: 'en' },
         ],
+        choose_model:"模型选择",
+        model_list: [
+            { text: 'Wav2Lip', value: 'wav2lip' },
+        ],
         translate:"翻译",
     },
     about:{

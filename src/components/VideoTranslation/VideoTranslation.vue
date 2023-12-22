@@ -20,7 +20,16 @@
             </option>
           </select>
 
-          <button @click="translateVideo">{{$t('vt.translate')}}</button>
+          <select v-model="chooseModel" style="margin-left: 10px">
+            <option value="">{{$t('vt.choose_model')}}</option>
+            <option v-for="model in $t('vt.model_list')" :key="model.value" :value="model.value">
+              {{ model.text }}
+            </option>
+          </select>
+
+          <button @click="translateVideo" style="margin-left: 10px">
+            {{$t('vt.translate')}}
+          </button>
         </div>
       </div>
 
@@ -46,6 +55,7 @@ export default {
     return {
       inputVideoSource: '',
       targetLanguage: '',
+      chooseModel: '',
       translatedVideoUrl: ''
     }
   },
@@ -65,10 +75,11 @@ export default {
       }
     },
     async translateVideo() {
-      const result = await fetch('你的视频翻译API', {
+      const result = await fetch('/vt/wav2lip', {
         method: 'POST',
         body: new FormData({
           language: this.targetLanguage,
+          model: this.chooseModel,
           video: this.$refs.inputVideo.src
         })
       });
@@ -116,6 +127,7 @@ video {
 .controls-container {
   margin-top: 20px;
   display: flex;
-  justify-content: space-between; /*等距分布*/
+  //justify-content: space-between; /*等距分布*/
+  justify-content: flex-start;
 }
 </style>
