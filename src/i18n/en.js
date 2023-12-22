@@ -7,8 +7,22 @@ export default {
     demo:'Demo',
     tools:{
         name:'Tools',
+        home:'Home',
         vt:'Video Translation',
         at:'Audio Translation',
+    },
+    vt: {
+        name: "Video Translation",
+        input: "Video Input",
+        input_text: "Upload or Drag Your Video",
+        output: "Video Output",
+        output_text: "Translated Video will showed here",
+        choose_target: "Choose Target Language",
+        language_list: [
+            { text: 'Chinese', value: 'zh' },
+            { text: 'English', value: 'en' },
+        ],
+        translate:"Translate",
     },
     about:{
         name:'About',

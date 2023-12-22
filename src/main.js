@@ -6,8 +6,11 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+Vue.use(Antd);
 import i18n from "@/i18n";
+import './global.css'
 
 
 Vue.use(ElementUI);

@@ -7,6 +7,9 @@
 .paddingt10{
     padding-top: 10vh;
 }
+.paddingl1{
+    padding-top: 1vw;
+}
 .get-start-btn {
     padding: 15px 30px;
     font-size: 1.2em;
