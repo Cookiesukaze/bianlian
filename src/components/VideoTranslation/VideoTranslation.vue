@@ -50,6 +50,7 @@
 </template>
 
 <script>
+// TODO:美化、翻译按钮检查表单
 export default {
   data() {
     return {
@@ -71,22 +72,23 @@ export default {
       event.preventDefault();
       const files = event.dataTransfer.files;
       if (files.length) {
-        this.loadVideo({ target: { files } });
+        this.loadVideo({target: {files}});
       }
     },
     async translateVideo() {
+      let formData = new FormData();
+      formData.append('language', this.targetLanguage);
+      formData.append('model', this.chooseModel);
+      formData.append('video', this.$refs.inputVideo.src);
+
       const result = await fetch('/vt/wav2lip', {
         method: 'POST',
-        body: new FormData({
-          language: this.targetLanguage,
-          model: this.chooseModel,
-          video: this.$refs.inputVideo.src
-        })
+        body: formData
       });
 
       const blob = await result.blob();
       this.translatedVideoUrl = URL.createObjectURL(blob);
-    }
+    },
   }
 }
 </script>

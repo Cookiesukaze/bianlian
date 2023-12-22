@@ -21,6 +21,7 @@ Vue.config.productionTip = false
 
 import axios from 'axios'
 axios.defaults.baseURL="http://192.168.1.102:8080/"
+// 连后台可以不用删上一行，但是必须要从localhost打开网址
 Vue.prototype.$http=axios
 
 new Vue({
