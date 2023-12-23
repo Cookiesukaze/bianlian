@@ -10,7 +10,7 @@
              @click="onBrowseClick">
           <div v-if="!inputVideoSource" class="video-text">{{$t('vt.input_text')}}</div>
           <video v-else ref="inputVideo" controls :src="inputVideoSource"></video>
-          <input type="file" @change="loadVideo" v-show="false" ref="inputVideoUpload" accept="video/*">
+          <input type="file" id="videoInput" @change="loadVideo" v-show="false" ref="inputVideoUpload" accept="video/*">
         </div>
         <div class="controls-container">
           <select v-model="targetLanguage">
@@ -75,20 +75,24 @@ export default {
         this.loadVideo({target: {files}});
       }
     },
-    async translateVideo() {
+    async translateVideo(){
+      if (!this.$refs.inputVideoUpload || !this.$refs.inputVideoUpload.files || this.$refs.inputVideoUpload.files.length === 0){
+        alert("请首先选择一个视频文件。");
+        return;
+      }
+      let videoFile = this.$refs.inputVideoUpload.files[0];
       let formData = new FormData();
       formData.append('language', this.targetLanguage);
       formData.append('model', this.chooseModel);
-      formData.append('video', this.$refs.inputVideo.src);
+      formData.append('video', videoFile);
 
       const result = await fetch('/vt/wav2lip', {
         method: 'POST',
         body: formData
       });
-
       const blob = await result.blob();
       this.translatedVideoUrl = URL.createObjectURL(blob);
-    },
+    }
   }
 }
 </script>
