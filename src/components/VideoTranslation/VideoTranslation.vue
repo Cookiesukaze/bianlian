@@ -8,6 +8,11 @@
              @dragover.prevent
              @drop="onDropVideo"
              @click="onBrowseClick">
+          <div v-if="inputVideoSource" @click.stop="removeVideo" class="delete-icon">
+            <a-button type="dashed" >
+              <a-icon type="delete" style="margin-bottom: 5px;color: #929EAD;font-size: 1rem"/>
+            </a-button>
+          </div>
           <div v-if="!inputVideoSource" class="video-text">{{$t('vt.input_text')}}</div>
           <video v-else ref="inputVideo" controls :src="inputVideoSource"></video>
           <input type="file" id="videoInput" @change="loadVideo" v-show="false" ref="inputVideoUpload" accept="video/*">
@@ -40,10 +45,9 @@
         </div>
       </div>
 
-      <div style="display: flex;flex-direction: column;margin-left: 10px;">
+      <div style="display: flex;flex-direction: column;margin-left: 30px;">
         <h4>{{$t('vt.output')}}</h4>
         <div class="video-box video-output-container">
-          <div v-if="!translatedVideoUrl" class="video-box"></div>
           <div v-if="!translatedVideoUrl" class="video-text">{{$t('vt.output_text')}}</div>
           <video v-else controls :src="translatedVideoUrl"></video>
         </div>
@@ -69,6 +73,9 @@ export default {
     }
   },
   methods: {
+    removeVideo(){
+      this.inputVideoSource = '';
+    },
     onBrowseClick() {
       this.$refs.inputVideoUpload.click();
     },
@@ -125,9 +132,10 @@ body{
   min-width: 560px;
   height: 315px;
   padding-bottom: 25.25%; /* 16:9 aspect ratio */
-  border: 1px solid #eee;
+  border: 2px dashed #a2a2a2;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 .video-text {
   position: absolute;
@@ -151,4 +159,12 @@ video {
   //justify-content: space-between; /*等距分布*/
   justify-content: flex-start;
 }
+.delete-icon {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
 </style>

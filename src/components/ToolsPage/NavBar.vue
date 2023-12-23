@@ -8,8 +8,8 @@
         <!-- 语言 -->
         <button class="dropbtn">{{ $t('language.name') }}</button>
         <div class="dropdown-content">
-          <a @click="changeLanguage('en')">English</a>
-          <a @click="changeLanguage('zh')">Chinese</a>
+          <a @click="changeLanguage('en')">{{ $t('language.en') }}</a>
+          <a @click="changeLanguage('zh')">{{ $t('language.zh') }}</a>
         </div>
       </div>
       <div class="dropdown">
