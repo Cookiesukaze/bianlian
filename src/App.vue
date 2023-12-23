@@ -29,6 +29,6 @@ export default {
 <style>
 @import "~@/assets/font/font.css";
 body, .ant{
-  font-family: opposans,微软雅黑,monospace;
+  font-family: opposans,微软雅黑,monospace !important;
 }
 </style>
