@@ -37,7 +37,7 @@ export default {
             { text: '男-小孩', value: '男-小孩' },
             { text: '男-正常2', value: '男-正常2' },
         ],
-        translate:"翻译",
+        translate:"开始翻译！",
         alert_list:[
             {type:'video_discard',text:'请先上传视频。'},
             {type:'select_discard',text:'请选择目标语言、使用的模型和声线。'},

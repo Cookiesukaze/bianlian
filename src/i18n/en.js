@@ -37,7 +37,7 @@ export default {
             { text: 'male-children', value: '男-小孩' },
             { text: 'male-normal-2', value: '男-正常2' },
         ],
-        translate:"Translate",
+        translate:"Translate！",
         alert_list:[
             {type:'video_discard',text:'please upload your video.'},
             {type:'select_discard',text:'please choose target language,model and tone.'},

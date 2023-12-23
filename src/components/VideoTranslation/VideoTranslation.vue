@@ -17,32 +17,7 @@
           <video v-else ref="inputVideo" controls :src="inputVideoSource"></video>
           <input type="file" id="videoInput" @change="loadVideo" v-show="false" ref="inputVideoUpload" accept="video/*">
         </div>
-        <div class="controls-container">
-          <select v-model="targetLanguage">
-            <option value="">{{$t('vt.choose_target')}}</option>
-            <option v-for="language in $t('vt.language_list')" :key="language.value" :value="language.value">
-              {{ language.text }}
-            </option>
-          </select>
 
-          <select v-model="chooseModel" style="margin-left: 10px">
-            <option value="">{{$t('vt.choose_model')}}</option>
-            <option v-for="model in $t('vt.model_list')" :key="model.value" :value="model.value">
-              {{ model.text }}
-            </option>
-          </select>
-
-          <select v-model="chooseTone" style="margin-left: 10px">
-            <option value="">{{$t('vt.choose_tone')}}</option>
-            <option v-for="tone in $t('vt.tone_list')" :key="tone.value" :value="tone.value">
-              {{ tone.text }}
-            </option>
-          </select>
-
-          <button @click="translateVideo" style="margin-left: 10px">
-            {{$t('vt.translate')}}
-          </button>
-        </div>
       </div>
 
       <div style="display: flex;flex-direction: column;margin-left: 30px;">
@@ -56,6 +31,34 @@
 
     </div>
 
+    <div class="controls-container">
+      <a-select v-model="targetLanguage" style="width: 220px;">
+        <a-select-option value="">{{$t('vt.choose_target')}}</a-select-option>
+        <a-select-option v-for="language in $t('vt.language_list')" :key="language.value" :value="language.value">
+          {{ language.text }}
+        </a-select-option>
+      </a-select>
+
+      <a-select v-model="chooseModel" style="margin-left: 10px;width: 150px;">
+        <a-select-option value="">{{$t('vt.choose_model')}}</a-select-option>
+        <a-select-option v-for="model in $t('vt.model_list')" :key="model.value" :value="model.value">
+          {{ model.text }}
+        </a-select-option>
+      </a-select>
+
+      <a-select v-model="chooseTone" style="margin-left: 10px;width: 170px;">
+        <a-select-option value="">{{$t('vt.choose_tone')}}</a-select-option>
+        <a-select-option v-for="tone in $t('vt.tone_list')" :key="tone.value" :value="tone.value">
+          {{ tone.text }}
+        </a-select-option>
+      </a-select>
+
+    </div>
+    <div class="center" style="margin-top:30px">
+      <a-button @click="translateVideo" type="primary" size='large'>
+        {{$t('vt.translate')}}
+      </a-button>
+    </div>
 
   </div>
 </template>
@@ -154,7 +157,8 @@ video {
   object-fit: cover;
 }
 .controls-container {
-  margin-top: 20px;
+  margin-left: 100px;
+  margin-top: 30px;
   display: flex;
   //justify-content: space-between; /*等距分布*/
   justify-content: flex-start;
@@ -166,5 +170,4 @@ video {
   cursor: pointer;
   z-index: 10;
 }
-
 </style>
