@@ -38,6 +38,10 @@ export default {
             { text: 'male-normal-2', value: '男-正常2' },
         ],
         translate:"Translate",
+        alert_list:[
+            {type:'video_discard',text:'please upload your video.'},
+            {type:'select_discard',text:'please choose target language,model and tone.'},
+        ],
     },
     about:{
         name:'About',

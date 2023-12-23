@@ -85,7 +85,11 @@ export default {
     },
     async translateVideo(){
       if (!this.$refs.inputVideoUpload || !this.$refs.inputVideoUpload.files || this.$refs.inputVideoUpload.files.length === 0){
-        alert("请首先选择一个视频文件。");
+        alert(this.$t('vt.alert_list[0].text'));
+        return;
+      }
+      if(!this.targetLanguage || !this.chooseModel || !this.chooseTone){
+        alert(this.$t('vt.alert_list[1].text'));
         return;
       }
       let videoFile = this.$refs.inputVideoUpload.files[0];
