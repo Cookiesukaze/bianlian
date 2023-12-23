@@ -13,22 +13,6 @@
         </div>
       </div>
       <div class="dropdown">
-        <!-- Demo -->
-        <button class="dropbtn">{{ $t('demo') }}</button>
-        <div class="dropdown-content">
-          <a href="#">Demo 1</a>
-          <a href="#">Demo 2</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <!-- Tools -->
-        <button class="dropbtn">{{ $t('tools.name') }}</button>
-        <div class="dropdown-content">
-          <a href="#/ToolsPage">{{ $t('tools.vt') }}</a>
-          <a href="#/ToolsPage">{{ $t('tools.at') }}</a>
-        </div>
-      </div>
-      <div class="dropdown">
         <button class="dropbtn">{{ $t('about.name') }}</button>
         <div class="dropdown-content">
         </div>

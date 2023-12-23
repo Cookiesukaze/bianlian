@@ -44,3 +44,6 @@
     font-weight: bold;
     text-shadow: 5px 1px 5px #fffdf7;
 }
+.grey-border-bottom{
+    border-bottom: 1px solid #e8e8e8;
+}

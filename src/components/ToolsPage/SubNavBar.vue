@@ -3,7 +3,7 @@
     <div style="width: 128px;">
       <a-menu
           style="height: calc(100vh - 61.8px);border: none"
-          :default-selected-keys="['1']"
+          :selectedKeys="[currentMenuItem]"
           :default-open-keys="['sub1']"
           mode="inline"
           :inline-collapsed="collapsed"
@@ -25,9 +25,9 @@
 
     </div>
 
-    <ToolsHomePage v-if="currentMenuItem === '1'"></ToolsHomePage>
-    <VideoTranslation v-if="currentMenuItem === '2'"></VideoTranslation>
-    <AudioTranslation v-if="currentMenuItem === '3'"></AudioTranslation>
+    <ToolsHomePage v-if="this.currentMenuItem === '1'"></ToolsHomePage>
+    <VideoTranslation v-if="this.currentMenuItem === '2'"></VideoTranslation>
+    <AudioTranslation v-if="this.currentMenuItem === '3'"></AudioTranslation>
   </div>
 
 </template>
@@ -37,11 +37,16 @@ import VideoTranslation from "@/components/VideoTranslation/VideoTranslation.vue
 import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue";
 import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
 export default {
+  props: ['passCurrentMenuItem'],
   data() {
     return {
       collapsed: false,
       currentMenuItem: ''
     };
+  },
+  mounted() {
+    console.log("SubNavBar拿到了侧边栏索引",this.passCurrentMenuItem);
+    this.currentMenuItem = this.passCurrentMenuItem;
   },
   methods: {
     toggleCollapsed() {

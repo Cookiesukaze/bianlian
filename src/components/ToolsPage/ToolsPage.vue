@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <SubNavBar></SubNavBar>
+    <SubNavBar :passCurrentMenuItem="this.$route.params.currentMenuItem"></SubNavBar>
   </div>
 </template>
 
@@ -13,6 +13,9 @@ export default {
   components: {
     NavBar,
     SubNavBar
-  }
+  },
+  mounted() {
+    console.log("ToolsPage拿到了侧边栏索引",this.$route.params.currentMenuItem)
+  },
 }
 </script>
