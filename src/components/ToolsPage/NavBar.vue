@@ -1,6 +1,6 @@
 <template>
   <div class="navbar grey-border-bottom">
-    <div class="logo-img" @click="goToHomePage" style="cursor:pointer;">
+    <div class="logo-img" @click="gotoHomePage" style="cursor:pointer;">
       <img src="https://s11.ax1x.com/2023/12/17/pi5amuT.png" alt="Placeholder Image" />
     </div>
     <div class="nav-links">
@@ -51,7 +51,7 @@ export default {
     changeLanguage(locale) {
       this.$i18n.locale = locale;
     },
-    goToHomePage() {
+    gotoHomePage() {
       this.$router.push('/');
     },
   },

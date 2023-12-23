@@ -4,16 +4,25 @@
     <h1 class="main-title text-shadow">{{ $t('title') }}</h1>
     <div class="paddingt10"></div>
     <h2 class="subtitle">{{ $t('sub_title.1') }}<span class="highlight underline-magical">{{ $t('sub_title.2') }}</span>{{ $t('sub_title.3') }}<span class="highlight underline-magical">{{ $t('sub_title.4') }}</span></h2>
-    <button class="get-start-btn btn-hollow">{{ $t('get_start_for_free') }}</button>
+    <button class="get-start-btn btn-hollow" @click="gotoToolsPage">{{ $t('get_start_for_free') }}</button>
   </div>
 </template>
 
-<script setup>
+<script>
 import '../../global.css'
 import '../../global/underline_magical.css'
 import '../../global/underline_magical.js'
 import '../../global/next_style_bg.scss'
 import '../../global/button_style.scss'
+
+export default {
+  methods:{
+    gotoToolsPage(){
+      this.$router.push('/toolspage');
+    }
+  }
+}
+
 </script>
 
 <style scoped>

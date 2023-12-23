@@ -25,6 +25,7 @@
 
     </div>
 
+    <ToolsHomePage v-if="currentMenuItem === '1'"></ToolsHomePage>
     <VideoTranslation v-if="currentMenuItem === '2'"></VideoTranslation>
     <AudioTranslation v-if="currentMenuItem === '3'"></AudioTranslation>
   </div>
@@ -34,6 +35,7 @@
 <script>
 import VideoTranslation from "@/components/VideoTranslation/VideoTranslation.vue";
 import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue";
+import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
 export default {
   data() {
     return {
@@ -50,6 +52,7 @@ export default {
     }
   },
   components: {
+    ToolsHomePage,
     VideoTranslation,
     AudioTranslation
   }
