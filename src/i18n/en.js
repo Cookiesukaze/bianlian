@@ -5,6 +5,15 @@ export default {
         en: 'English',
     },
     demo:'Demo',
+    demo1:{
+        h1_list:{
+            h1_1: "Make Your",
+            h1_2: "Videos",
+            h1_3: "Go",
+            h1_4: "Global",
+        },
+        desc_text:"Using our video translation to make teaching videos from anywhere easily disseminated."
+    },
     tools:{
         name:'Tools',
         home:'Home',

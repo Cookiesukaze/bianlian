@@ -5,6 +5,15 @@ export default {
         en: 'English',
     },
     demo:'演示',
+    demo1:{
+        h1_list:{
+            h1_1: "让你的",
+            h1_2: "教学视频",
+            h1_3: "传播到",
+            h1_4: "全世界",
+        },
+        desc_text:"用我们的视频翻译，让任何地方的教学视频都能轻松被传播"
+    },
     tools:{
         name:'工具',
         home:'库',
