@@ -55,4 +55,5 @@ export default {
         4:'世界',
     },
     get_start_for_free:"免费开始使用",
+    wait_text:"耐心等待输出...",
 }

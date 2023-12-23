@@ -23,7 +23,10 @@
       <div style="display: flex;flex-direction: column;margin-left: 30px;">
         <h4>{{$t('vt.output')}}</h4>
         <div class="video-box video-output-container">
-          <div v-if="!translatedVideoUrl" class="video-text">{{$t('vt.output_text')}}</div>
+          <div v-if="!translatedVideoUrl">
+            <div v-if="translateSeconds > 0" class="video-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
+            <div v-else class="video-text">{{$t('vt.output_text')}}</div>
+          </div>
           <video v-else controls :src="translatedVideoUrl"></video>
         </div>
       </div>
@@ -64,7 +67,7 @@
 </template>
 
 <script>
-// TODO:美化、翻译按钮检查表单
+
 export default {
   data() {
     return {
@@ -72,7 +75,8 @@ export default {
       targetLanguage: '',
       chooseModel: '',
       chooseTone: '',
-      translatedVideoUrl: ''
+      translatedVideoUrl: '',
+      translateSeconds: 0,  // 计时器
     }
   },
   methods: {
@@ -111,10 +115,20 @@ export default {
 
       let model_path = '/vt/wav2lip'
       if(this.chooseModel==="wav2lip") {model_path = '/vt/wav2lip'}
+
+
+      // 开始计时
+      this.translateSeconds = 0;
+      let timer = setInterval(() => {
+        this.translateSeconds += 1;
+      }, 1000);
+
       const result = await fetch(model_path, {
         method: 'POST',
         body: formData
       });
+      clearInterval(timer);  // 结束计时
+
       const blob = await result.blob();
       this.translatedVideoUrl = URL.createObjectURL(blob);
     }
@@ -147,6 +161,7 @@ body{
   transform: translate(-50%, -50%);
   color: #bbb;
   font-size: 18px;
+  z-index: 10;
 }
 video {
   position: absolute;

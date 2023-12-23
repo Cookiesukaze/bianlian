@@ -55,5 +55,5 @@ export default {
         4:'world',
     },
     get_start_for_free:"Get start for free",
-
+    wait_text:"be patient...",
 }
