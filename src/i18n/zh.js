@@ -26,6 +26,17 @@ export default {
         model_list: [
             { text: 'Wav2Lip', value: 'wav2lip' },
         ],
+        choose_tone:"声线选择",
+        tone_list: [
+            { text: '女-正常', value: '女-正常' },
+            { text: '女-少女', value: '女-少女' },
+            { text: '女-辽宁口音', value: '女-辽宁口音' },
+            { text: '女-陕西口音', value: '女-陕西口音' },
+            { text: '男-正常', value: '男-正常' },
+            { text: '男-少年', value: '男-少年' },
+            { text: '男-小孩', value: '男-小孩' },
+            { text: '男-正常2', value: '男-正常2' },
+        ],
         translate:"翻译",
     },
     about:{

@@ -27,6 +27,13 @@
             </option>
           </select>
 
+          <select v-model="chooseTone" style="margin-left: 10px">
+            <option value="">{{$t('vt.choose_tone')}}</option>
+            <option v-for="tone in $t('vt.tone_list')" :key="tone.value" :value="tone.value">
+              {{ tone.text }}
+            </option>
+          </select>
+
           <button @click="translateVideo" style="margin-left: 10px">
             {{$t('vt.translate')}}
           </button>
@@ -57,6 +64,7 @@ export default {
       inputVideoSource: '',
       targetLanguage: '',
       chooseModel: '',
+      chooseTone: '',
       translatedVideoUrl: ''
     }
   },
@@ -84,9 +92,12 @@ export default {
       let formData = new FormData();
       formData.append('language', this.targetLanguage);
       formData.append('model', this.chooseModel);
+      formData.append('tone', this.chooseTone);
       formData.append('video', videoFile);
 
-      const result = await fetch('/vt/wav2lip', {
+      let model_path = '/vt/wav2lip'
+      if(this.chooseModel==="wav2lip") {model_path = '/vt/wav2lip'}
+      const result = await fetch(model_path, {
         method: 'POST',
         body: formData
       });
