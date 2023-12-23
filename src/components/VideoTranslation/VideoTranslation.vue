@@ -27,7 +27,14 @@
             <div v-if="translateSeconds > 0" class="video-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
             <div v-else class="video-text">{{$t('vt.output_text')}}</div>
           </div>
-          <video v-else controls :src="translatedVideoUrl"></video>
+          <div v-else>
+            <div class="delete-icon">
+              <a-button type="dashed" >
+                {{ translateSeconds }} s
+              </a-button>
+            </div>
+            <video  controls :src="translatedVideoUrl"></video>
+          </div>
         </div>
       </div>
 
