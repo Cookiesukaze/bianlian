@@ -14,6 +14,13 @@ module.exports = {
           '^/vt/wav2lip': ''
         }
       },
+      '/at/baidu': {
+        target: 'http://127.0.0.1:5000/at/baidu',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/at/baidu': ''
+        }
+      },
     }
   }
 }

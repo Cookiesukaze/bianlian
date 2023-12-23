@@ -26,12 +26,14 @@
     </div>
 
     <VideoTranslation v-if="currentMenuItem === '2'"></VideoTranslation>
+    <AudioTranslation v-if="currentMenuItem === '3'"></AudioTranslation>
   </div>
 
 </template>
 
 <script>
 import VideoTranslation from "@/components/VideoTranslation/VideoTranslation.vue";
+import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue";
 export default {
   data() {
     return {
@@ -48,7 +50,8 @@ export default {
     }
   },
   components: {
-    VideoTranslation
+    VideoTranslation,
+    AudioTranslation
   }
 };
 </script>
