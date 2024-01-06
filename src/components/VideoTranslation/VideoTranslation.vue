@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import io from 'socket.io-client';
 
 export default {
   data() {
@@ -84,7 +85,18 @@ export default {
       chooseTone: '',
       translatedVideoUrl: '',
       translateSeconds: 0,  // 计时器
+      logMessages: [],  // 用来储存日志消息
+      socket: null,     // 用来储存 WebSocket 连接
     }
+  },
+  mounted() {//专用于监听后端log
+    // 初始化 WebSocket 连接
+    this.socket = io('http://127.0.0.1:5000');
+    // 监听新的日志消息
+    this.socket.on('message', (message) => {
+      this.logMessages.push(message);
+      console.log(message);  // 在控制台打印日志消息
+    });
   },
   methods: {
     removeVideo(){
