@@ -24,7 +24,12 @@
         <h4>{{$t('vt.output')}}</h4>
         <div class="video-box video-output-container">
           <div v-if="!translatedVideoUrl">
-            <div v-if="translateSeconds > 0" class="video-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
+            <div v-if="translateSeconds > 0">
+              <div class="video-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" :style="{ width: progressBarValue + '%' }"></div>
+              </div>
+            </div>
             <div v-else class="video-text">{{$t('vt.output_text')}}</div>
           </div>
           <div v-else>
@@ -87,6 +92,7 @@ export default {
       translateSeconds: 0,  // 计时器
       logMessages: [],  // 用来储存日志消息
       socket: null,     // 用来储存 WebSocket 连接
+      progressBarValue: 0,  // 进度条
     }
   },
   mounted() {//专用于监听后端log
@@ -97,6 +103,7 @@ export default {
       this.logMessages.push(message);
       console.log(message);  // 在控制台打印日志消息
     });
+
   },
   methods: {
     removeVideo(){
@@ -117,6 +124,8 @@ export default {
       }
     },
     async translateVideo(){
+      this.startProgressBar();  //进度条
+
       if (!this.$refs.inputVideoUpload || !this.$refs.inputVideoUpload.files || this.$refs.inputVideoUpload.files.length === 0){
         alert(this.$t('vt.alert_list[0].text'));
         return;
@@ -150,7 +159,19 @@ export default {
 
       const blob = await result.blob();
       this.translatedVideoUrl = URL.createObjectURL(blob);
-    }
+    },
+    startProgressBar() {//进度条
+      const maxProgress = 99;
+      const updateSpeed = 500; // Progress bar speed in milliseconds
+
+      const interval = setInterval(() => {
+        if (this.progressBarValue >= maxProgress) {
+          clearInterval(interval);
+        } else {
+          this.progressBarValue += 1; // Increment progress bar value
+        }
+      }, updateSpeed);
+    },
   }
 }
 </script>
@@ -159,6 +180,24 @@ export default {
 body{
   font-family: opposans, 微软雅黑, monospace;
 }
+
+.progress-bar-container {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 60%;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #4caf50;
+  width: 0%;
+  border-radius: 3px;
+}
+
 .video-container {
   display: flex;
   justify-content: space-between;
@@ -175,7 +214,7 @@ body{
 }
 .video-text {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #bbb;
@@ -194,7 +233,7 @@ video {
   margin-left: 100px;
   margin-top: 30px;
   display: flex;
-  //justify-content: space-between; /*等距分布*/
+//justify-content: space-between; /*等距分布*/
   justify-content: flex-start;
 }
 .delete-icon {
