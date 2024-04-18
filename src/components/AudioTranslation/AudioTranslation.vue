@@ -214,7 +214,7 @@ audio {
 .delete-icon {
   position: absolute;
   right: 5px;
-  top: 2audiopx;
+  top: 2px;
   cursor: pointer;
   z-index: 10;
 }

@@ -19,6 +19,7 @@ export default {
         home:'库',
         vt:'视频翻译',
         at:'音频翻译',
+        vg:'视频生成',
     },
     vt: {
         name: "视频翻译",
@@ -78,6 +79,26 @@ export default {
         alert_list:[
             {type:'audio_discard',text:'请先上传音频。'},
             {type:'select_discard',text:'请选择目标语言和声线。'},
+        ],
+    },
+    vg: {
+        name: "视频生成",
+        input: "音频输入",
+        input_text: "上传或拖入您的音频文件",
+        output: "视频输出",
+        output_text: "生成的数字人视频将显示在此",
+        choose_model:"模型选择",
+        model_list: [
+            { text: 'GeneFace++', value: 'genefacepp' },
+        ],
+        choose_digital_human:'数字人选择',
+        digital_human_list:[
+            { text: 'May', value: 'may' },
+        ],
+        generate:"开始生成！",
+        alert_list:[
+            {type:'audio_discard',text:'请先上传音频。'},
+            {type:'select_discard',text:'请选择使用的模型和数字人。'},
         ],
     },
     about:{

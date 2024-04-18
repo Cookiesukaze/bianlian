@@ -21,6 +21,10 @@
           <a-icon type="audio" />
           <span>{{ $t('tools.at') }}</span>
         </a-menu-item>
+        <a-menu-item key="4">
+          <a-icon type="video-camera" />
+          <span>{{ $t('tools.vg') }}</span>
+        </a-menu-item>
       </a-menu>
 
     </div>
@@ -28,6 +32,7 @@
     <ToolsHomePage v-if="this.currentMenuItem === '1'"></ToolsHomePage>
     <VideoTranslation v-if="this.currentMenuItem === '2'"></VideoTranslation>
     <AudioTranslation v-if="this.currentMenuItem === '3'"></AudioTranslation>
+    <DHVideoGenerate v-if="this.currentMenuItem === '4'"></DHVideoGenerate>
   </div>
 
 </template>
@@ -36,6 +41,7 @@
 import VideoTranslation from "@/components/VideoTranslation/VideoTranslation.vue";
 import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue";
 import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
+import DHVideoGenerate from "@/components/DHVideoGenerate/DHVideoGenerate.vue";
 export default {
   props: ['passCurrentMenuItem'],
   data() {
@@ -57,6 +63,7 @@ export default {
     }
   },
   components: {
+    DHVideoGenerate,
     ToolsHomePage,
     VideoTranslation,
     AudioTranslation

@@ -19,6 +19,7 @@ export default {
         home:'Home',
         vt:'Video Translation',
         at:'Audio Translation',
+        vg:'Video Generate',
     },
     vt: {
         name: "Video Translation",
@@ -78,6 +79,26 @@ export default {
         alert_list:[
             {type:'audio_discard',text:'please upload your audio.'},
             {type:'select_discard',text:'please choose target language and tone.'},
+        ],
+    },
+    vg: {
+        name: "Video Generate",
+        input: "Audio Input",
+        input_text: "Upload or Drag Your Audio",
+        output: "Video Output",
+        output_text: "Gigital Human Video will showed here",
+        choose_model:"Choose Model",
+        model_list: [
+            { text: 'GeneFace++', value: 'genefacepp' },
+        ],
+        choose_digital_human:'Choose Digital Human',
+        digital_human_list:[
+            { text: 'May', value: 'may' },
+        ],
+        generate:"Generate！",
+        alert_list:[
+            {type:'audio_discard',text:'please upload your audio.'},
+            {type:'select_discard',text:'please choose model and digital human.'},
         ],
     },
     about:{
