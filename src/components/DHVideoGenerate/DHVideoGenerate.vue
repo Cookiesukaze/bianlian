@@ -50,7 +50,7 @@
         </a-select-option>
       </a-select>
 
-      <a-select v-model="chooseDigitalHuman" style="margin-left: 10px;width: 200px;">
+      <a-select v-model="chooseDigitalHuman" style="margin-left: 10px;width: 150px;">
         <a-select-option value="">{{$t('vg.choose_digital_human')}}</a-select-option>
         <a-select-option v-for="digitalHuman in $t('vg.digital_human_list')" :key="digitalHuman.value" :value="digitalHuman.value">
           {{ digitalHuman.text }}
