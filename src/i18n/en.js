@@ -34,6 +34,7 @@ export default {
         choose_model:"Choose Model",
         model_list: [
             { text: 'Wav2Lip', value: 'wav2lip' },
+            { text: 'GeneFace++', value: 'geneface++' },
         ],
         choose_tone:"Choose Tone",
         tone_list: [

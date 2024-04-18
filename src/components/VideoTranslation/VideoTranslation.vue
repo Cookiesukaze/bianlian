@@ -26,8 +26,8 @@
           <div v-if="!translatedVideoUrl">
             <div v-if="translateSeconds > 0">
               <div class="video-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
-              <div class="progress-bar-container">
-                <div class="progress-bar" :style="{ width: progressBarValue + '%' }"></div>
+              <div class="progress-bar-container-1">
+                <div class="progress-bar-1" :style="{ width: progressBarValue + '%' }"></div>
               </div>
             </div>
             <div v-else class="video-text">{{$t('vt.output_text')}}</div>
@@ -144,7 +144,6 @@ export default {
       let model_path = '/vt/wav2lip'
       if(this.chooseModel==="wav2lip") {model_path = '/vt/wav2lip'}
 
-
       // 开始计时
       this.translateSeconds = 0;
       let timer = setInterval(() => {
@@ -181,17 +180,16 @@ body{
   font-family: opposans, 微软雅黑, monospace;
 }
 
-.progress-bar-container {
+.progress-bar-container-1 {
   position: absolute;
   top: 50%;
   left: 20%;
   width: 60%;
   background-color: #e0e0e0;
   border-radius: 3px;
-  margin-top: 10px;
 }
 
-.progress-bar {
+.progress-bar-1 {
   height: 10px;
   background-color: #4caf50;
   width: 0%;

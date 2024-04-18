@@ -24,7 +24,12 @@
         <h4>{{$t('at.output')}}</h4>
         <div class="audio-box audio-output-container">
           <div v-if="!translatedAudioUrl">
-            <div v-if="translateSeconds > 0" class="audio-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
+            <div v-if="translateSeconds > 0">
+              <div class="audio-text">{{ translateSeconds }} s, {{$t('wait_text')}}</div>
+              <div class="progress-bar-container-2">
+                <div class="progress-bar-2" :style="{ width: progressBarValue1 + '%' }"></div>
+              </div>
+            </div>
             <div v-else class="audio-text">{{$t('at.output_text')}}</div>
           </div>
           <div v-else>
@@ -76,6 +81,8 @@ export default {
       chooseTone: '',
       translatedAudioUrl: '',
       translateSeconds: 0,  // 计时器
+      progressBarValue1: 0,  // 进度条
+
     }
   },
   methods: {
@@ -97,6 +104,8 @@ export default {
       }
     },
     async translateAudio(){
+      this.startProgressBar();  //进度条
+
       if (!this.$refs.inputAudioUpload || !this.$refs.inputAudioUpload.files || this.$refs.inputAudioUpload.files.length === 0){
         alert(this.$t('at.alert_list[0].text'));
         return;
@@ -127,7 +136,19 @@ export default {
 
       const blob = await result.blob();
       this.translatedAudioUrl = URL.createObjectURL(blob);
-    }
+    },
+    startProgressBar() {//进度条
+      const maxProgress = 99;
+      const updateSpeed = 500; // Progress bar speed in milliseconds
+
+      const interval = setInterval(() => {
+        if (this.progressBarValue1 >= maxProgress) {
+          clearInterval(interval);
+        } else {
+          this.progressBarValue1 += 1; // Increment progress bar value
+        }
+      }, updateSpeed);
+    },
   }
 }
 </script>
@@ -135,6 +156,23 @@ export default {
 <style scoped>
 body{
   font-family: opposans, 微软雅黑, monospace;
+}
+.progress-bar-container-2 {
+  z-index: 100;
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  width: 60%;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+}
+
+.progress-bar-2 {
+  z-index: 101;
+  height: 10px;
+  background-color: #4caf50;
+  width: 0%;
+  border-radius: 3px;
 }
 .audio-container {
   display: flex;
