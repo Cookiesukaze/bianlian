@@ -20,6 +20,7 @@ export default {
         vt:'视频翻译',
         at:'音频翻译',
         vg:'视频生成',
+        vc:'声音克隆',
     },
     vt: {
         name: "视频翻译",
@@ -99,6 +100,24 @@ export default {
         alert_list:[
             {type:'audio_discard',text:'请先上传音频。'},
             {type:'select_discard',text:'请选择使用的模型和数字人。'},
+        ],
+    },
+    vc: {
+        name: "声音克隆",
+        input: "声音输入",
+        input_text: "上传或拖入您的声音文件",
+        text_input_text: "文本输入",
+        text_input_placeholder:'输入您想要朗读的文字',
+        output: "声音输出",
+        output_text: "生成的克隆声音将展示在此",
+        choose_model:"模型选择",
+        model_list: [
+            { text: 'MetaVoice', value: 'metavoice' },
+        ],
+        generate:"开始生成！",
+        alert_list:[
+            {type:'audio_discard',text:'请先上传声音文件。'},
+            {type:'select_discard',text:'请选择使用的模型。'},
         ],
     },
     about:{

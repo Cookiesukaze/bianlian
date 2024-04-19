@@ -20,13 +20,14 @@ export default {
         vt:'Video Translation',
         at:'Audio Translation',
         vg:'Video Generate',
+        vc:'Voice Clone',
     },
     vt: {
         name: "Video Translation",
         input: "Video Input",
         input_text: "Upload or Drag Your Video",
         output: "Video Output",
-        output_text: "Translated Video will showed here",
+        output_text: "Translated Video Will Showed Here",
         choose_target: "Choose Target Language",
         language_list: [
             { text: 'Chinese', value: 'zh' },
@@ -58,7 +59,7 @@ export default {
         input: "Audio Input",
         input_text: "Upload or Drag Your Audio",
         output: "Audio Output",
-        output_text: "Translated Audio will showed here",
+        output_text: "Translated Audio Will Showed Here",
         choose_target: "Choose Target Language",
         language_list: [
             { text: 'Chinese', value: 'zh' },
@@ -99,6 +100,24 @@ export default {
         alert_list:[
             {type:'audio_discard',text:'please upload your audio.'},
             {type:'select_discard',text:'please choose model and digital human.'},
+        ],
+    },
+    vc: {
+        name: "Video Clone",
+        input: "Voice Input",
+        input_text: "Upload or Drag Your Voice",
+        text_input_text: "Text Input",
+        text_input_placeholder:'Input Text You Want To Read',
+        output: "Voice Output",
+        output_text: "Cloned Voice Will Showed Here",
+        choose_model:"Choose Model",
+        model_list: [
+            { text: 'MetaVoice', value: 'metavoice' },
+        ],
+        generate:"Generate！",
+        alert_list:[
+            {type:'audio_discard',text:'please upload your voice.'},
+            {type:'select_discard',text:'please choose model.'},
         ],
     },
     about:{
