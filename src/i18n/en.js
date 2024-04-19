@@ -87,7 +87,7 @@ export default {
         input: "Audio Input",
         input_text: "Upload or Drag Your Audio",
         output: "Video Output",
-        output_text: "Gigital Human Video will showed here",
+        output_text: "Gigital Human Video Will Showed Here",
         choose_model:"Choose Model",
         model_list: [
             { text: 'GeneFace++', value: 'genefacepp' },
