@@ -5,8 +5,8 @@
       <MainContent></MainContent>
       <ImageCarousel></ImageCarousel>
     </div>
-    <DemoPage1></DemoPage1>
-    <DemoPage2></DemoPage2>
+    <DemoPage1 ref="demoPage1"></DemoPage1>
+    <DemoPage2 ref="demoPage2"></DemoPage2>
   </div>
 </template>
 

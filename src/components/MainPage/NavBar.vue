@@ -16,8 +16,8 @@
         <!-- Demo -->
         <button class="dropbtn">{{ $t('demo') }}</button>
         <div class="dropdown-content">
-          <a href="#">Demo 1</a>
-          <a href="#">Demo 2</a>
+          <a @click="scrollToDemo('demoPage1')">Demo 1</a>
+          <a @click="scrollToDemo('demoPage2')">Demo 2</a>
         </div>
       </div>
       <div class="dropdown">
@@ -56,6 +56,9 @@ export default {
     gotoHomePage() {
       location.reload();//仅刷新
     },
+    scrollToDemo(refName) {
+      this.$parent.$refs[refName].$el.scrollIntoView({ behavior: 'smooth' });
+    }
   },
 };
 </script>
