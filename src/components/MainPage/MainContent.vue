@@ -18,7 +18,7 @@ import '../../global/button_style.scss'
 export default {
   methods:{
     gotoToolsPage(){
-      this.$router.push({name:'ToolsPage', params: { currentMenuItem: '1' }});
+      this.$router.push({name:'ToolsPage', params: { currentMenuItem: '2' }});
     }
   }
 }

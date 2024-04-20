@@ -9,10 +9,10 @@
           :inline-collapsed="collapsed"
           @select="onMenuItemSelect"
       >
-        <a-menu-item key="1" style="margin-top: 30px">
-          <a-icon type="home"/>
-          <span>{{ $t('tools.home') }}</span>
-        </a-menu-item>
+<!--        <a-menu-item key="1" style="margin-top: 30px">-->
+<!--          <a-icon type="home"/>-->
+<!--          <span>{{ $t('tools.home') }}</span>-->
+<!--        </a-menu-item>-->
         <a-menu-item key="2">
           <a-icon type="video-camera" />
           <span>{{ $t('tools.vt') }}</span>
@@ -33,7 +33,7 @@
 
     </div>
 
-    <ToolsHomePage v-if="this.currentMenuItem === '1'"></ToolsHomePage>
+<!--    <ToolsHomePage v-if="this.currentMenuItem === '1'"></ToolsHomePage>-->
     <VideoTranslation v-if="this.currentMenuItem === '2'"></VideoTranslation>
     <AudioTranslation v-if="this.currentMenuItem === '3'"></AudioTranslation>
     <DHVideoGenerate v-if="this.currentMenuItem === '4'"></DHVideoGenerate>
@@ -45,7 +45,7 @@
 <script>
 import VideoTranslation from "@/components/VideoTranslation/VideoTranslation.vue";
 import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue";
-import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
+// import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
 import DHVideoGenerate from "@/components/DHVideoGenerate/DHVideoGenerate.vue";
 import VoiceClone from "@/components/VoiceClone/VoiceClone.vue";
 export default {
@@ -70,7 +70,7 @@ export default {
   },
   components: {
     DHVideoGenerate,
-    ToolsHomePage,
+    // ToolsHomePage,
     VideoTranslation,
     AudioTranslation,
     VoiceClone,
