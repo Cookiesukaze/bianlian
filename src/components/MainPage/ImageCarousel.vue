@@ -24,6 +24,7 @@ export default {
         {id: 3, src: 'https://s11.ax1x.com/2023/12/17/pi5y2NT.png'},
         {id: 4, src: 'https://s11.ax1x.com/2023/12/17/pi5ctfS.png'},
         {id: 5, src: 'https://s11.ax1x.com/2023/12/17/pi5calQ.png'},
+        {id: 6, src: 'https://s21.ax1x.com/2024/04/20/pkpS18e.png'},
         // 更多图片...
       ],
       duration: 50 // 根据需要调整滚动速度
