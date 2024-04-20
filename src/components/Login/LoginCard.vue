@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div class="overlay" v-if="showModal" @click="closeModal"></div>
+  <div class="modal-container" v-if="showModal">
+    <div class="overlay"  @click="closeModal"></div>
     <div>
-      <div class="login-card" v-if="showModal">
+      <div class="login-card" >
         <div class="title">{{ $t('login') }}</div>
         <div class="login-form">
           <input type="text" :placeholder="$t('login_card.phone')" v-model="username" style="margin-top: 0.5rem;"/>
@@ -67,15 +67,23 @@ export default {
 </script>
 
 <style scoped>
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
 .overlay {
-  position: fixed !important;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(1px);
-  z-index: 1000;
 }
 
 .login-card {
