@@ -139,6 +139,13 @@ export default {
         aboutus_text_4: "Repo: https://github.com/Cookiesukaze/bianlian"
     },
     login:'Login',
+    login_card:{
+        phone:'Phone Number',
+        otp:'SMS OTP',
+        send_code:'Send SMS Code',
+        login_reg:'Login / Register',
+    },
+    logout:'Logout',
     title:'AI Video Translation',
     sub_title:{
         1:'use our product to',

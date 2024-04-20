@@ -36,21 +36,46 @@
           <router-link :to="{ name: 'AboutUs'}">{{ $t('about.aboutus') }}</router-link>
         </div>
       </div>
-      <div class="dropdown">
+      <div class="dropdown" v-if="!isLoggedIn" @click="toggleLoginCard">
         <button class="dropbtn">{{ $t('login') }}</button>
+      </div>
+      <div class="dropdown" v-else>
+        <button class="dropbtn">{{ username }}</button>
         <div class="dropdown-content">
+          <a @click="logout">{{ $t('logout') }}</a>
         </div>
       </div>
-
     </div>
+    <LoginCard v-if="showLoginCard" @login-success="handleLoginSuccess" style="z-index: 999" class="login-card-container"></LoginCard>
+
   </div>
 </template>
 
 <script>
 
 
+import LoginCard from "@/components/Login/LoginCard.vue";
+
 export default {
+  components: {
+    LoginCard,
+  },
+  data() {
+    return {
+      isLoggedIn: false,
+      username: '',
+      showLoginCard: false,
+    };
+  },
   methods: {
+    handleLoginSuccess(userData) {
+      this.isLoggedIn = true;
+      this.username = userData.username;
+    },
+    logout() {
+      this.isLoggedIn = false;
+      this.username = '';
+    },
     changeLanguage(locale) {
       this.$i18n.locale = locale;
     },
@@ -59,7 +84,11 @@ export default {
     },
     scrollToDemo(refName) {
       this.$parent.$refs[refName].$el.scrollIntoView({ behavior: 'smooth' });
-    }
+    },
+    toggleLoginCard() {
+      console.log("唤起登录")
+      this.showLoginCard = !this.showLoginCard;
+    },
   },
 };
 </script>
@@ -123,4 +152,10 @@ export default {
 }
 
 /* Add styling for other navigation links as needed */
+.login-card-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>

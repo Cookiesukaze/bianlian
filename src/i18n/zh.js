@@ -139,6 +139,13 @@ export default {
         aboutus_text_4:"仓库：https://github.com/Cookiesukaze/bianlian"
     },
     login:'登录',
+    login_card:{
+        phone:'手机号',
+        otp:'短信验证码',
+        send_code:'发送验证码',
+        login_reg:'登录 / 注册',
+    },
+    logout:'登出',
     title:'AI 视频翻译',
     sub_title:{
         1:'使用我们的产品',
