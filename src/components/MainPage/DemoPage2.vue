@@ -1,18 +1,18 @@
 <template>
   <div id="demopage2">
-    <div class="left" style="margin-top:18vh; text-align: left;margin-left: 10vw;">
-      <h1 style="font-size: 2rem">{{ $t('demo2.h2_list.h2_1') }}</h1>
-      <h1 style="font-size: 3rem">{{ $t('demo2.h2_list.h2_2') }}</h1>
-      <h1 style="font-size: 4rem">{{ $t('demo2.h2_list.h2_3') }}</h1>
-      <h1 style="font-size: 6rem">{{ $t('demo2.h2_list.h2_4') }}</h1>
-    </div>
-    <div class="right" style="margin-top:15vh">
+    <div class="left" style="margin-top:15vh">
       <ImageComparison :images="imageList"></ImageComparison>
       <div class="description" style="margin-top:2vh">
         <transition name="slide-fade">
           <p>{{ $t('demo2.desc_text') }}</p>
         </transition>
       </div>
+    </div>
+    <div class="right" style="margin-top:18vh; text-align: right; margin-right: 10vw;">
+      <h1 style="font-size: 2rem">{{ $t('demo2.h2_list.h2_1') }}</h1>
+      <h1 style="font-size: 3rem">{{ $t('demo2.h2_list.h2_2') }}</h1>
+      <h1 style="font-size: 4rem">{{ $t('demo2.h2_list.h2_3') }}</h1>
+      <h1 style="font-size: 6rem">{{ $t('demo2.h2_list.h2_4') }}</h1>
     </div>
   </div>
 </template>
@@ -41,8 +41,16 @@ export default {
 }
 
 .left {
+  width: 70%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
   width: 30%;
-  text-align: center;
+  text-align: right;
   padding: 50px;
   color: #333;
 }
@@ -52,14 +60,6 @@ h1 {
   letter-spacing:2px;
   font-weight: bold;
   text-shadow: 5px 1px 5px #fffdf7;
-}
-
-.right {
-  width: 70%;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .image {
