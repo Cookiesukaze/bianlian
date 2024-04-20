@@ -131,6 +131,12 @@ export default {
     },
     about:{
         name:'About',
+        aboutus:"About us",
+        return_text:"Back",
+        aboutus_text_1: "We are from the 2021 CS major at HDU and are a course group of four people.",
+        aboutus_text_2: "This site showcases our research content from the two-year innovative practice course, including video translation, audio translation, talking video generation, voice cloning, and other features. Page functions are available when needed.",
+        aboutus_text_3: "If you have any questions or requirements, please feel free to contact us.",
+        aboutus_text_4: "Repo: https://github.com/Cookiesukaze/bianlian"
     },
     login:'Login',
     title:'AI Video Translation',

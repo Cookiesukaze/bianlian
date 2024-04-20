@@ -33,6 +33,7 @@
       <div class="dropdown">
         <button class="dropbtn">{{ $t('about.name') }}</button>
         <div class="dropdown-content">
+          <router-link :to="{ name: 'AboutUs'}">{{ $t('about.aboutus') }}</router-link>
         </div>
       </div>
       <div class="dropdown">

@@ -131,6 +131,12 @@ export default {
     },
     about:{
         name:'关于',
+        aboutus:"关于我们",
+        return_text:"返回主页",
+        aboutus_text_1:"我们来自2021级HDU计科专业，是一个四个人的课程小组。",
+        aboutus_text_2:"本站展示了本小组两年内创新实践课程的研究内容，包括视频翻译、音频翻译、说话视频生成、声音克隆等功能，页面功能在需要时开放。",
+        aboutus_text_3:"如果您有任何问题或需求，请随时与我们联系。",
+        aboutus_text_4:"仓库：https://github.com/Cookiesukaze/bianlian"
     },
     login:'登录',
     title:'AI 视频翻译',
