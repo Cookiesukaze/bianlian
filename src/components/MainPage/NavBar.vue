@@ -68,10 +68,6 @@ export default {
     };
   },
   methods: {
-    handleLoginSuccess(userData) {
-      this.isLoggedIn = true;
-      this.username = userData.username;
-    },
     logout() {
       this.isLoggedIn = false;
       this.username = '';
