@@ -6,6 +6,7 @@
       <ImageCarousel></ImageCarousel>
     </div>
     <DemoPage1></DemoPage1>
+    <DemoPage2></DemoPage2>
   </div>
 </template>
 
@@ -15,11 +16,12 @@ import MainContent from "@/components/MainPage/MainContent.vue";
 import ImageCarousel from "@/components/MainPage/ImageCarousel.vue";
 import '../../global/hue_bg.scss'
 import DemoPage1 from "@/components/MainPage/DemoPage1.vue";
+import DemoPage2 from "@/components/MainPage/DemoPage2.vue";
 
 export default {
   name: 'MainPage',
   components:{
-    NavBar,MainContent,ImageCarousel,DemoPage1
+    NavBar,MainContent,ImageCarousel,DemoPage1,DemoPage2
   },
   data() {
     return {

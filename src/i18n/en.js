@@ -14,6 +14,15 @@ export default {
         },
         desc_text:"Using our video translation to make teaching videos from anywhere easily disseminated."
     },
+    demo2:{
+        h2_list:{
+            h2_1: "Preserve",
+            h2_2: "Your",
+            h2_3: "Unique",
+            h2_4: "Voice",
+        },
+        desc_text:"Ensure your voice never disappears with our voice cloning technology."
+    },
     tools:{
         name:'Tools',
         home:'Home',
