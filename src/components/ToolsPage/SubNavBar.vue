@@ -77,3 +77,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+::v-deep(.ant-menu){
+  background: transparent !important;
+}
+</style>
