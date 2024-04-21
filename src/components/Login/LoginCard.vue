@@ -43,10 +43,10 @@ export default {
     login() {
       // 其他登录逻辑
       setTimeout(() => {
-        this.isLoggedIn = true;
+        this.$store.dispatch('login', this.username);
         this.showModal = false;
         console.log('模拟登录成功');
-        this.$emit('login-success', { username: this.username }); // 传递用户名
+        this.$emit('login-success', { username: this.username });
       }, 500);
     },
     sendCode() {

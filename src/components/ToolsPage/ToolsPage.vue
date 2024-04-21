@@ -7,7 +7,7 @@
 
 <script>
 import SubNavBar from "@/components/ToolsPage/SubNavBar.vue";
-import NavBar from "@/components/ToolsPage/NavBar.vue";
+import NavBar from "@/components/MainPage/NavBar.vue";
 
 export default {
   components: {

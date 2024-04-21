@@ -62,21 +62,30 @@ export default {
   },
   data() {
     return {
-      isLoggedIn: false,
-      username: '',
       showLoginCard: false,
     };
   },
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn;
+    },
+    username() {
+      return this.$store.state.username;
+    },
+  },
   methods: {
     logout() {
-      this.isLoggedIn = false;
-      this.username = '';
+      this.$store.dispatch('logout');
     },
     changeLanguage(locale) {
       this.$i18n.locale = locale;
     },
     gotoHomePage() {
-      location.reload();//仅刷新
+      if (this.$route.path === '/mainpage') {
+        location.reload(); // 如果已经在 /mainpage，则刷新页面
+      } else {
+        this.$router.push('/mainpage'); // 否则跳转到 /mainpage
+      }
     },
     scrollToDemo(refName) {
       this.$parent.$refs[refName].$el.scrollIntoView({ behavior: 'smooth' });
