@@ -84,7 +84,7 @@ export default {
     }
   },
   mounted() {
-    this.socket = io('https://u323673-a695-9decea59.westb.seetacloud.com:8443');
+    this.socket = io('http://127.0.0.1:5001');
     this.socket.on('message', (message) => {
       this.logMessages.push(message);
       console.log(message);
@@ -125,7 +125,7 @@ export default {
       formData.append('audio', audioFile);
       let model_path = ''
       if (this.chooseModel === 'metavoice')
-        model_path = 'https://u323673-a695-9decea59.westb.seetacloud.com:8443/vc/metavoice/audio2audio';
+        model_path = 'http://127.0.0.1:5001/vc/metavoice/text2audio';
 
       this.translateSeconds = 0;
       let timer = setInterval(() => {
@@ -143,7 +143,7 @@ export default {
     },
     startProgressBar() {
       const maxProgress = 99;
-      const updateSpeed = 500;
+      const updateSpeed = 200;
 
       const interval = setInterval(() => {
         if (this.progressBarValue >= maxProgress) {
