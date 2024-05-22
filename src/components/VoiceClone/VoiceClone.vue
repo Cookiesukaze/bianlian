@@ -123,9 +123,10 @@ export default {
       let formData = new FormData();
       formData.append('text', this.inputText);
       formData.append('audio', audioFile);
-      let model_path = ''
+
+      let model_path = '';
       if (this.chooseModel === 'metavoice')
-        model_path = 'http://127.0.0.1:5001/vc/metavoice/text2audio';
+        model_path = 'https://u323673-8c85-1696ded4.westb.seetacloud.com:8443/vc/metavoice';
 
       this.translateSeconds = 0;
       let timer = setInterval(() => {
@@ -136,10 +137,16 @@ export default {
         method: 'POST',
         body: formData
       });
+
       clearInterval(timer);
 
-      const blob = await result.blob();
-      this.translatedAudioUrl = URL.createObjectURL(blob);
+      if (result.ok) {
+        const blob = await result.blob();
+        this.translatedAudioUrl = URL.createObjectURL(blob);
+      } else {
+        const error = await result.json();
+        alert(error.error);
+      }
     },
     startProgressBar() {
       const maxProgress = 99;
