@@ -48,6 +48,7 @@ export default {
         ],
         choose_tone:"Choose Tone",
         tone_list: [
+            { text: 'origin', value: '原声线' },
             { text: 'female-normal', value: '女-正常' },
             { text: 'female-young', value: '女-少女' },
             { text: 'female-liangning', value: '女-辽宁口音' },
