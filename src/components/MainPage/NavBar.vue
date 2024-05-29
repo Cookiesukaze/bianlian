@@ -28,6 +28,7 @@
           <router-link :to="{ name: 'ToolsPage', params: { currentMenuItem: '3' } }">{{ $t('tools.at') }}</router-link>
           <router-link :to="{ name: 'ToolsPage', params: { currentMenuItem: '4' } }">{{ $t('tools.vg') }}</router-link>
           <router-link :to="{ name: 'ToolsPage', params: { currentMenuItem: '5' } }">{{ $t('tools.vc') }}</router-link>
+          <router-link :to="{ name: 'ToolsPage', params: { currentMenuItem: '6' } }">{{ $t('tools.dg') }}</router-link>
         </div>
       </div>
       <div class="dropdown">

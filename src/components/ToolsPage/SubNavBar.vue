@@ -29,6 +29,10 @@
           <a-icon type="audio" />
           <span>{{ $t('tools.vc') }}</span>
         </a-menu-item>
+        <a-menu-item key="6">
+          <a-icon type="audio" />
+          <span>{{ $t('tools.dg') }}</span>
+        </a-menu-item>
       </a-menu>
 
     </div>
@@ -38,6 +42,7 @@
     <AudioTranslation v-if="this.currentMenuItem === '3'"></AudioTranslation>
     <DHVideoGenerate v-if="this.currentMenuItem === '4'"></DHVideoGenerate>
     <VoiceClone v-if="this.currentMenuItem === '5'"></VoiceClone>
+    <DialectGenerate v-if="this.currentMenuItem === '6'"></DialectGenerate>
   </div>
 
 </template>
@@ -48,6 +53,7 @@ import AudioTranslation from "@/components/AudioTranslation/AudioTranslation.vue
 // import ToolsHomePage from "@/components/ToolsPage/ToolsHomePage.vue";
 import DHVideoGenerate from "@/components/DHVideoGenerate/DHVideoGenerate.vue";
 import VoiceClone from "@/components/VoiceClone/VoiceClone.vue";
+import DialectGenerate from "@/components/DialectGenerate/DialectGenerate.vue";
 export default {
   props: ['passCurrentMenuItem'],
   data() {
@@ -74,6 +80,7 @@ export default {
     VideoTranslation,
     AudioTranslation,
     VoiceClone,
+    DialectGenerate,
   }
 };
 </script>
